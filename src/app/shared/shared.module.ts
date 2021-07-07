@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 // Material
 import { MatTableModule } from '@angular/material/table';
@@ -17,6 +18,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     CommonModule
   ],
   exports: [
+    HttpClientModule,
     MatTableModule,
     MatCardModule,
     MatButtonModule,
