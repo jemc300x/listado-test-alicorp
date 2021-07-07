@@ -10,12 +10,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+import { MessageDialogComponent } from './components/message-dialog/message-dialog.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [MessageDialogComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   exports: [
     HttpClientModule,
@@ -24,7 +27,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatButtonModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ]
 })
 export class SharedModule { }

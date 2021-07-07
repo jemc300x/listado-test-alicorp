@@ -6,7 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Product } from 'src/app/shared/model/product';
-import { MessageDialogComponent } from '../../components/message-dialog/message-dialog.component';
+import { MessageDialogComponent } from '../../../../shared/components/message-dialog/message-dialog.component';
 import { ProductService } from '../../service/product.service';
 
 @Component({
@@ -42,13 +42,12 @@ export class ListComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onDelete(item: Product): void {
-    console.log(item);
     this.onOpenDialog(item);
   }
 
   onOpenDialog(item: Product): void {
     const dialogRef = this.dialog.open(MessageDialogComponent, {
-      data: {message: `¿Esta seguro que desea eliminar este registro << ${ item.title } >> ?`}
+      data: {title: 'Confirmación', message: `¿Esta seguro que desea eliminar este registro << ${ item.title } >> ?`}
     });
     dialogRef.afterClosed().subscribe(
       res => {

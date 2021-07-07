@@ -15,7 +15,7 @@ export class ProductService {
     return this.http.get<Product[]>(`${environment.apiUrl}/products`);
   }
 
-  delete(productId: number) {
-    return this.http.delete(`${environment.apiUrl}/products/${productId}`);
+  delete(productId: number): Observable<Product> {
+    return this.http.delete<Product>(`${environment.apiUrl}/products/${productId}`);
   }
 }
